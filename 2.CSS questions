@@ -1,0 +1,68 @@
+# 前端面试总结（CSS篇）
+1. **圣杯布局**
+2. **CSS合并方法**
+3. **盒子模型**
+4. **CSS定位**
+5. **CSS动画原理**
+6. **CSS3动画（简单动画的实现，如旋转等）**
+7. **CSS不同选择器的权重(CSS层叠的规则)**
+8. **flexbox布局**
+9. **块级元素和行内元素的异同**
+10. **CSS在性能优化方面的实践（比方说选择器的效率等）**
+11. **CSS打包压缩的方法**
+12. **使用CSS预处理的优缺点（比方说Sass和Compass等）**
+13. *** { box-sizing: border-box; }这条CSS规则是干嘛的，有什么优点**
+14. **CSS浮动的原理及清除浮动的方法及优缺点**
+15. **CSS垂直居中的方法**
+
+
+==================================================================
+# 前端面试总结
+1. **圣杯布局**
+参考博客：[圣杯布局小结](http://web.jobbole.com/84993/)
+2. **CSS合并方法**
+在CSS规则中，可以用**@import**来加载外部的样式表，但是不建议使用，因为**@import**会影响浏览器加载性能，特别是**link标签**和**@import**混合使用时，会导致性能变差。
+其次，可以用一些打包工具（grunt/gulp）或者CSS预处理器（Sass）来实现CSS文件的合并。
+3. **盒子模型**
+参考：[CSS 框模型概述](http://www.w3school.com.cn/css/css_boxmodel.asp)
+4. **CSS定位**
+CSS中定位属性是**position**，**position**有四个属性：static、relative、fixed、absolute，其中static是默认值。通常将**position**设置为relative、fixed和absolute时，还需要设置top/bottom/left/right，用来表示元素的位置。relative指元素相对于同级元素的位置；fixed指相对于浏览器窗口的位置；absolute指相对于祖先元素是relative的元素（没有的话指body）。
+5. **CSS动画原理**
+参考：[The Guide To CSS Animation: Principles and Examples](https://www.smashingmagazine.com/2011/09/the-guide-to-css-animation-principles-and-examples/#more-105335)
+6. **CSS3动画（简单动画的实现，如旋转等）**
+参考：
+ [CSS动画简介](http://www.ruanyifeng.com/blog/2014/02/css_transition_and_animation.html)
+ [CSS3 Animation](http://isux.tencent.com/css3/index.html)
+7. **CSS不同选择器的权重(CSS层叠的规则)**
+首先，找出所有应用到该标签的所有规则。然后按照下面的规则进行应用：
+1、！important规则最重要，大于其它规则；
+2、行内样式规则，加1000；
+3、对于选择器中给定的各个ID属性值，加100；
+4、对于选择器中给定的各个类属性、属性选择器或者伪类选择器，加10；
+5、对于选择其中给定的各个元素标签选择器，加1；
+6、通配符和结合符给予特殊性没有任何贡献；
+7、如果权值一样，则按照样式规则的先后顺序来应用，顺序靠后的覆盖靠前的规则。
+8. **flexbox布局**
+参考：
+[A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+[A Visual Guide to CSS3 Flexbox Properties](https://scotch.io/tutorials/a-visual-guide-to-css3-flexbox-properties)
+9. **块级元素和行内元素的异同**
+参考：
+[html块级元素和内联元素区别详解](http://blog.csdn.net/chen_zw/article/details/8713205)
+10. **CSS在性能优化方面的实践（比方说选择器的效率等）**
+参考：
+[提高 web 应用性能之 CSS 性能调优](https://www.ibm.com/developerworks/cn/web/1109_zhouxiang_optcss/)
+11. **CSS打包压缩的方法**
+使用一些打包工具，比如grunt/gulp等
+12. **使用CSS预处理的优缺点（比方说Sass和Compass等）**
+**缺点**：简单来说CSS预处理器语言较CSS玩法变得更高级了，但同时降低了自己对最终代码的控制力。更致命的是提高了门槛，首先是上手门槛，其次是维护门槛，再来是团队整体水平和规范的门槛。这也造成了初学学习成本的昂贵。
+**优点**：用一种专门的编程语言，为CSS增加了一些编程的特性，将CSS作为目标生成文件，然后开发者就只要使用这种语言进行编码工作。通俗的说，CSS预处理器用一种专门的编程语言，进行Web页面样式设计，然后再编译成正常的CSS文件，以供项目使用。CSS预处理器为CSS增加一些编程的特性，无需考虑浏览器的兼容性问题，例如你可以在CSS中使用变量、简单的逻辑程序、函数等等在编程语言中的一些基本特性，可以让你的CSS更加简洁、适应性更强、可读性更佳，更易于代码的维护等诸多好处。
+13. *** { box-sizing: border-box; }这条CSS规则是干嘛的，有什么优点**
+参考：
+[box-sizing MDN](https://developer.mozilla.org/zh-CN/docs/Web/CSS/box-sizing)
+14. **CSS浮动的原理及清除浮动的方法及优缺点**
+参考：
+[CSS float浮动的深入研究、详解及拓展](http://www.zhangxinxu.com/wordpress/2010/01/css-float%E6%B5%AE%E5%8A%A8%E7%9A%84%E6%B7%B1%E5%85%A5%E7%A0%94%E7%A9%B6%E3%80%81%E8%AF%A6%E8%A7%A3%E5%8F%8A%E6%8B%93%E5%B1%95%E4%B8%80/)
+15. **CSS垂直居中的方法**
+参考：
+[CSS垂直居中总结](http://www.cnblogs.com/dojo-lzz/p/4419596.html)
